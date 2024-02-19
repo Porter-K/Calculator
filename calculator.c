@@ -2,10 +2,8 @@
 #include <stdlib.h>
 #include "parse.h"
 #include "solve.h"
+#include "calculator.h"
 
-
-void calculatorCLI();
-int getNum();
 
 int main(int argc, char *arv[]){
     printf("Basic calculator(0) or type in expression(1): ");
