@@ -14,13 +14,11 @@ struct pointers parse(char equation[]){
     for(int i=0; equation[i]!='\0'; i++){
         if(isNumber(equation[i])){
             if(i>0&&isNumber(equation[i-1])){
-                ptrs.nums[numIndex]*=10;                printf("%d: %d\n", numIndex, ptrs.nums[numIndex]);
+                ptrs.nums[numIndex]*=10;
                 ptrs.nums[numIndex]+=(equation[i]-48);
-                printf("%d: %d\n", numIndex, ptrs.nums[numIndex]);
             }else{
                 numIndex++;
                 ptrs.nums[numIndex]=(equation[i]-48);
-                printf("%d: %d\n", numIndex, ptrs.nums[numIndex]);
             }
         }else if (isOperation(equation[i])) {
             opsIndex++;

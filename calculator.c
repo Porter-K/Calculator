@@ -19,7 +19,8 @@ int main(int argc, char *arv[]){
         fgets(expression, 200, stdin); 
         struct pointers ptrs = parse(expression);
         int answer = solve(ptrs);
-        printf("%d\n", answer);
+        printf("%s", expression);
+        printf("=%d\n", answer);
     }
     return 0;
 }
