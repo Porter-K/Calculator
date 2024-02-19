@@ -1,11 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "parse.h"
+#include "solve.h"
+
 
 void calculatorCLI();
 int getNum();
 
 int main(int argc, char *arv[]){
-    calculatorCLI();
+    printf("Basic calculator(0) or type in expression(1): ");
+    int choice;
+    scanf("%d", &choice);
+    if(choice==0){calculatorCLI();}
+    else if(choice==1){
+        printf("Enter expression: ");
+        char expression[200];
+        getchar();
+        fgets(expression, 200, stdin); 
+        struct pointers ptrs = parse(expression);
+        int answer = solve(ptrs);
+        printf("%d\n", answer);
+    }
     return 0;
 }
 
@@ -13,6 +28,7 @@ void calculatorCLI(){
     int num1, num2;
     char operator;
     while(1){
+        getchar();
         printf("Enter an operator: (x to exit)");
         operator = fgetc(stdin);
         if(operator=='x'){
@@ -54,6 +70,6 @@ int getNum(){
     //fgets(input, 10, stdin);
     //sscanf(input, "%d", &num);
     scanf("%d", &num);
-    getchar();
+    //getchar();
     return num;
 }

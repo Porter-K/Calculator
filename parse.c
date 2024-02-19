@@ -1,22 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "parse.h"
 
-enum operation{
-    add,
-    sub,
-    multiply,
-    divide
-};
-
-struct pointers{
-    int* nums;
-    enum operation* ops;
-    int lastNum;
-    int lastOp;
-};
-
-int isNumber(char c);
-int isOperation(char c);
 
 struct pointers parse(char equation[]){
     struct pointers ptrs;
